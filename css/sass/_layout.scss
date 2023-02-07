@@ -1,0 +1,271 @@
+// Layout of project
+
+// Container-devices
+$container-xl: 1440px;
+$container-l: 1268px;
+$container-m: 960px;
+$container-s: 620px;
+$container-xs: 340px;
+$gutter: 24px;
+
+// Mixin of media-queries
+
+@mixin responsive($device) {
+    @if $device==xl {
+
+        // For resolutions upper 1440px
+        @media screen and (min-width: $container-xl) {
+            @content;
+        }
+    }
+
+    @else if $device==ul {
+
+        // For resolutions upper 960px
+        @media screen and (min-width: $container-m) {
+            @content;
+        }
+    }
+
+    @else if $device==l {
+
+        // For resolutions between 1140px and 1440px
+        @media screen and (max-width: $container-xl) and (min-width: $container-l) {
+            @content;
+        }
+    }
+
+    @else if $device==m {
+
+        // For resolutions between 960px and 1140px
+        @media screen and (max-width: $container-l) and (min-width: $container-s) {
+            @content;
+        }
+    }
+
+    @else if $device==s {
+
+        // For resolutions less than 960px
+        @media screen and (max-width: $container-m) {
+            @content;
+        }
+    }
+
+    @else if $device==xs {
+
+        // For resolutions less than 340px
+        @media screen and (max-width: $container-xs) {
+            @content;
+        }
+    }
+}
+
+.container {
+    max-width: $container-xl;
+    margin: 0 auto;
+    padding: 96px 24px;
+
+    /*display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;*/
+    //overflow: hidden;
+    //position: sticky;
+
+    // clearfix
+    &::after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+
+    @include responsive(s) {
+        flex-direction: column;
+        padding: 96px 16px !important;
+    }
+}
+
+@function grid($col, $total: 12) {
+    @return ($col / $total) * 100%;
+}
+
+@for $i from 1 through 12 {
+    .grid-#{$i} {
+        width: calc(#{grid($i)} - #{$gutter});
+        margin: $gutter / 2;
+        float: left;
+
+        @include responsive(s) {
+            width: calc(100% - #{$gutter});
+            margin: $gutter / 2;
+            float: none;
+        }
+    }
+}
+
+
+
+.flex {
+    display: flex;
+}
+
+.flex-start-row {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: row;
+
+}
+
+.flex-start-btw {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+
+}
+
+
+
+.bg__sv {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.hero {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+
+    @include responsive(s) {
+        overflow:visible;
+    }
+
+    .bg__hero {
+        position: absolute;
+        width: 948px;
+        height: 915px;
+        left: 60%;
+        top: -64px;
+        z-index: -100;
+        pointer-events: none;
+    }
+
+    .comp__hero {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        pointer-events: none;
+        z-index: -1000;
+        object-fit: cover;
+    }
+}
+
+.content__1 {
+    font-family: 'Source Code Pro', monospace;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+
+
+    .chapter {
+
+        .square {
+            width: 10px;
+            height: 10px;
+            background-color: $gray-1;
+        }
+
+        span {
+            color: $gray-1;
+
+        }
+    }
+
+    .video__promotion {
+       img {
+        width: 240px;
+       }
+    }
+
+    .solo__leveling {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+      
+
+        img {
+            width: 50px;
+            
+        }
+
+        span {
+            color: $white-dark;
+            height: 20px;
+        }
+
+    }
+
+    .chapter__info {
+        color: $gray-5;
+
+        @include responsive(s) {
+            flex-direction: column;
+        }
+    }
+}
+
+
+.content__2 {
+    height: 100%;
+    position: relative;
+    pointer-events: none;
+    position: relative;
+    
+    &::before {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 7%;
+       
+        width: 100%;
+        height: 50%;
+        background: linear-gradient(180deg, #010106 0%, rgba(1, 1, 6, 0) 100%);
+        transform: matrix(1, 0, 0, -1, 0, 0);
+        z-index: 100;
+        
+    }
+   
+
+    .particle-effect {
+        width: 100%;
+        max-width: 578px;
+        
+        object-fit: cover;
+        opacity: 0;
+
+        @include responsive(s) {
+            max-height: 450px;
+            
+        }
+
+    }
+
+
+    .smoke__blue {
+        position:absolute;
+        width: 100%;
+        height: 100%;
+        top: -30%;
+        left: 0;
+        right: 0;
+        opacity: 0;
+        
+    }
+}

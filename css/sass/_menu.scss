@@ -1,0 +1,346 @@
+header {
+    width: 100%;
+    position: fixed;
+    z-index: 999;
+
+}
+
+.header__active {
+    background: linear-gradient(180deg, #010106 0%, rgba(1, 1, 6, 0) 100%);
+}
+
+.header__container {
+    max-width: $container-xl;
+    margin: 0 auto;
+    padding: 24px 24px ;
+
+    /*display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;*/
+    //overflow: hidden;
+    //position: sticky;
+
+    // clearfix
+    
+
+   
+
+   
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+}
+
+.navmenu {
+
+    @include responsive(s) {
+        display: none;
+    }
+}
+
+.navmenu .navlist {
+    display: flex;
+    align-items: center;
+    font-family: 'Source Code Pro', monospace;
+    font-weight: 600;
+
+
+
+    .menu__item:not(:last-child) {
+        margin-right: 16px;
+
+        .menu__link {
+            color: $white-dark;
+            transition: .4s ease;
+            position: relative;
+            padding: 4px 18px;
+            transition: .4s ease;
+
+            &::before {
+                content: " ";
+                display: block;
+                position: absolute;
+                inset: 0 0 0 0;
+                z-index: -1;
+                transition: transform .4s ease;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                background-color: $blue-normal;
+                opacity: 1;
+
+
+
+            }
+
+            &::before {
+                transform: scaleX(0);
+                transform-origin: bottom right;
+
+            }
+
+            &:hover {
+                color: $black-normal;
+
+                &::before {
+
+                    transform: scaleX(1);
+                    transform-origin: bottom left;
+                }
+            }
+        }
+    }
+}
+
+#A-1pictures {
+    color: $cian-normal;
+}
+
+.box__menu {
+    height: 50px;
+    width: 50px;
+    position: relative;
+    cursor: pointer;
+
+
+    &:hover {
+
+
+
+        &::before,
+        &::after {
+            background-color: $blue-normal;
+        }
+
+    }
+
+    &::before {
+        content: "";
+        position: absolute;
+        width: inherit;
+        height: 3px;
+        background-color: $white-dark;
+        top: 40%;
+        transition: .1s ease;
+    }
+
+    &::after {
+        content: "";
+        position: absolute;
+        width: 50%;
+        height: 3px;
+        background-color: $white-dark;
+        top: 60%;
+        transition: .1s ease;
+
+
+    }
+}
+
+.navmenu .navlist {
+    display: flex;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//gsap menu
+.md__menu {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    opacity: 0;
+    background: rgba(62, 92, 216, 0.36);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    display: none;
+
+}
+
+.top__menu {
+    width: 100%;
+    height: 90px;
+    margin-bottom: 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    border-bottom: 1px solid $gray-1;
+
+
+    .St__level {
+        color: $gray-5;
+        font-family: 'Source Code Pro', monospace;
+        font-weight: 600;
+        margin-left: 24px;
+        position: relative;
+        font-size: 14px;
+        opacity: .7;
+
+        &::before {
+            content: '';
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            background-color: $gray-5;
+            top: 50%;
+            transform: translateY(-50%);
+            left: -15px;
+            opacity: .7;
+        }
+    }
+}
+
+.close__menu {
+    margin-right: 24px;
+    cursor: pointer;
+
+    .close {
+        transition: stroke-dashoffset .4s ease;
+
+        &:hover {
+
+            .close_stoke1,
+            .close_stoke2 {
+                stroke: $white-normal;
+                stroke-dashoffset: 40;
+
+            }
+
+        }
+    }
+
+
+
+}
+
+.menu__body {
+    position: fixed;
+    top: 24px;
+    z-index: 1100;
+    width: 0px;
+    height: 95%;
+    border-radius: 15px;
+    background-color: $black-normal;
+    margin-left: 24px;
+
+    @include responsive(s) {
+        width: 100vw;
+        height: 100vh;
+        margin-left: 0px;
+        top: 0;
+        border-radius: 0px;
+    }
+
+}
+
+.menu__nav {
+    width: 100%;
+    position: relative;
+
+    @include responsive(s) {
+        margin-top: 120px;
+    }
+}
+
+.menu__nav__list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    .menu__nav__item:not(:last-child) {
+        margin-bottom: 24px;
+    }
+
+    .menu__nav_link {
+        color: $white-dark;
+        font-family: 'Source Code Pro', monospace;
+        font-weight: 600;
+        text-transform: uppercase;
+        font-size: 48px;
+        position: relative;
+        padding: 0px 64px;
+
+        @include responsive(s) {
+            font-size: 24px;
+
+
+        }
+
+        @include responsive(xs) {
+            font-size: 16px;
+
+        }
+
+        &.active {
+            color: $black-normal;
+
+            &::before {
+                content: '';
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                left: 0;
+                opacity: 1;
+                background-color: $white-normal;
+                z-index: -1;
+                transform: skew(-15deg, 0deg);
+                transition: .4s ease;
+            }
+        }
+
+        &:hover {
+            color: #000;
+
+            &::before {
+                width: 100%;
+                opacity: 1;
+            }
+        }
+
+        &::before {
+            content: '';
+            position: absolute;
+            width: 0%;
+            height: 100%;
+            left: 0;
+            opacity: 0;
+            background-color: $white-normal;
+            z-index: -1;
+            transform: skew(-15deg, 0deg);
+            transition: .4s ease;
+        }
+    }
+}
+
+.leveling__logo {
+    position: absolute;
+    right: 0;
+    transform: translateX(-50%);
+    top: 50%;
+
+    @include responsive(xs) {
+        display: none;
+
+    }
+}

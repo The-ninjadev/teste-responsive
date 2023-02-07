@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 user-scalable=no">
+    <!--favicon-->
+    <link rel="icon" type="image/png" sizes="16x16" href="./svg/A1-logo.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="./svg/A1-logo.svg">
+    <link rel="icon" type="image/png" sizes="96x96" href="./svg/A1-logo.svg">
+    <!--Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@300;400;700&display=swap" rel="stylesheet">
+    <!--Styles-->
+    <link rel="stylesheet" href="./css/style.css">
+
+    <script src="./js/svg-inject.min.js"></script>
+
+    <title>Solo Leveling</title>
+</head>
+
+<body>
+
+    <header id="header">
+        <div class=" header__container flex-start-btw ">
+            <div class="menu">
+                <div class="box__menu">
+
+                </div>
+
+                <nav class="navmenu ml-6 ">
+                    <ul class="navlist ">
+                        <li class="menu__item"><a href="#" class="menu__link ">Level up</a></li>
+                        <li class="menu__item"><a href="#" class="menu__link">The project</a></li>
+                        <li class="menu__item"><a href="#" class="menu__link">Story</a></li>
+                        <li class="menu__item"><a href="#" class="menu__link">Character desing</a></li>
+                        <li class="menu__item"><a href="#" id="A-1pictures">#A-1Pictures</a></li>
+                    </ul>
+                </nav>
+
+            </div>
+
+            <div class="a1__logo ">
+                <img src="./svg/A1-logo.svg" onload="SVGInject(this)" alt="logo_A1" />
+            </div>
+
+        </div>
+
+    </header>
+
+    <div class="md__menu">
+        <div class="menu__body">
+            <div class="top__menu ">
+                <div class="St__level">ST_Level</div>
+                <div class="close__menu ">
+                    <img src="./svg/close__menu.svg" onload="SVGInject(this)" alt="close_menu">
+                </div>
+            </div>
+
+
+            <nav class="menu__nav ">
+                <ul class="menu__nav__list ">
+                    <li class="menu__nav__item"><a href="" data-value="story" class="menu__nav_link active">story</a>
+                    </li>
+                    <li class="menu__nav__item"><a href="" data-value="manhwa" class="menu__nav_link">manhwa</a></li>
+                    <li class="menu__nav__item"><a href="" data-value="characters" class="menu__nav_link">characters</a>
+                    </li>
+                    <li class="menu__nav__item"><a href="" data-value="gallery" class="menu__nav_link">gallery</a></li>
+                    <li class="menu__nav__item"><a href="" data-value="a-1 pictures" class="menu__nav_link">a-1
+                            pictures</a></li>
+                </ul>
+                <div class="leveling__logo">
+                    <img src="./svg/leveling__logo.svg" onload="SVGInject(this)" alt="">
+                </div>
+            </nav>
+
+
+        </div>
+    </div>
+
+    <!--
+        <div class="loading__center">
+            <div class="loading ">Solo Leveling</div>
+        </div>
+    -->
+
+
+
+    <main class="hero pt-3">
+
+        <div class="bg__hero">
+            <img src="./images/bg-character.jpg" alt="">
+        </div>
+        <div class="comp__hero">
+            <img src="./svg/components-bg.svg" alt="">
+        </div>
+        <div class="container flex">
+            <div class="content__1 grid-7">
+                <div class="chapter flex-start-row ">
+                    <span class="square mr-2"></span>
+                    <span>001</span>
+                </div>
+
+                <h1>A NEW LEVEL ANIMATION PROJECT BEGINS. </h1>
+                <div class="video__promotion my-5">
+                    <img src="./images/Mask group.png" alt="">
+                    <div></div>
+                </div>
+                <div class="bg__btn ">
+
+                    <div class="button-container-1">
+                        <a href="#" class="mas ">Animation project</a>
+                        <button id='work' type="button" name="Hover">Animation project</button>
+                    </div>
+
+                    <a href="" class="btn__secondary ">Level Up</a>
+                </div>
+
+                <div class="solo__leveling mt-4">
+                    <img src="./svg/leveling__logo.svg" onload="SVGInject(this)" alt="solo-leveling logo">
+                    <span>Solo Leveling</span>
+                </div>
+
+
+                <div class="chapter__info flex-start-row">
+                    <div class="grid-6">
+                        <p class="p3">
+                            Every Keeper is born, endowed with attributes from a collection of over 400. Coming in 2023,
+                            They are personable, iconic possessions that represent A-1P foundational pillars of
+                            evolution, inclusion, and imagination.
+                        </p>
+
+                    </div>
+                    <div class="grid-6">
+                        <p class="p3">
+                            Lorem check out our latest project for contract research organization, specialized in
+                            recombinant protein express
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="content__2 grid-5 ">
+                <img class="smoke__blue" src="./svg/smoke-blue.svg" alt="">
+                <img class=" img__hero particle-effect" src="./images/Group 5273.png" alt=""
+                    style="filter: url(#particle-effect);">
+                <svg>
+                    <defs>
+                        <filter id="particle-effect">
+                            <feImage xlink:href="./images/Group 5273.png" result="particle" />
+                            <feTurbulence type="turbulence" baseFrequency="0.45" numOctaves="4" result="turbulence" />
+                            <feDisplacementMap in="particle" id="scalle" in2="turbulence" scale="-170" />
+                        </filter>
+                    </defs>
+                </svg>
+
+            </div>
+
+        </div>
+    </main>
+
+
+    <!--
+   <div class="bg__sv">
+        <img src="./svg/bg_vg.svg" alt="">
+    </div>
+    <div>
+        <img src="./svg/line_svg.svg" alt="">
+    </div>
+
+
+    <div class="cursor__outer"></div>
+    <div class="cursor__inner"></div>
+    -->
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"
+        integrity="sha512-f8mwTB+Bs8a5c46DEm7HQLcJuHMBaH/UFlcgyetMqqkvTcYg4g5VXsYR71b3qC82lZytjNYvBj2pf0VekA9/FQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="./js/script.js"></script>
+
+
+
+</body>
+
+
+
+</html>

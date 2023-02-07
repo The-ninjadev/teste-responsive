@@ -1,0 +1,159 @@
+@mixin button($bcolor,
+    $url,
+    $x1,
+    $y1,
+    $bor,
+    $col) {
+    background: $bcolor;
+    -webkit-mask: url($url);
+    mask: url($url);
+    -webkit-mask-size: $x1 $y1;
+    mask-size: $x1 $y1;
+    border: $bor;
+    color: $col;
+}
+
+
+.button-container-1 {
+    position: relative;
+    width: 232px;
+    height: 50px;
+    overflow: hidden;
+    border: 1px solid transparent;
+    transition: 0.5s;
+    transform: skew(-10deg, 0deg);
+    border-radius: 3px;
+
+    &:hover {
+        border: 1px solid $blue-light;
+    }
+    
+    
+
+
+    button {
+        width: 100%;
+        height: 100%;
+        font-weight: bold;
+        font-size: 16px;
+        font-family: 'Source Code Pro', monospace;
+        border-radius: 3px;
+        
+
+        @include button($blue-normal,
+            "https://raw.githubusercontent.com/robin-dela/css-mask-animation/master/img/nature-sprite.png",
+            2300%,
+            100%,
+            none,
+            $black-dark);
+        cursor: pointer;
+        
+        animation: ani2 0.7s steps(22) forwards;
+
+        &:hover {
+        
+            animation: ani 0.7s steps(22) forwards;
+        }
+    }
+}
+
+.mas {
+    position: absolute;
+    color: $white-dark;
+    text-align: center;
+    width: 100%;
+    font-family: 'Source Code Pro', monospace;
+    font-size: 16px;
+    margin-top: 14px;
+    overflow: hidden;
+    font-weight: bold;
+}
+
+@keyframes ani {
+    from {
+
+        mask-position: 0 0;
+    }
+
+    to {
+
+        mask-position: 100% 0;
+    }
+}
+
+@keyframes ani2 {
+    from {
+
+        mask-position: 100% 0;
+    }
+
+    to {
+
+        mask-position: 0 0;
+    }
+}
+
+.bg__btn {
+    position: relative;
+    width: 406px;
+    cursor: pointer;
+}
+
+
+.btn__secondary {
+    width: 406px;
+    height: 73px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    color: $white-dark;
+    text-align: end;
+    background: transparent;
+    border-radius: 4px;
+    transform: skewX(-6deg);
+    transition: .4s ease;
+    font-size: 16px;
+    line-height: 150%;
+    font-weight: 400;
+    position: absolute;
+    padding-right: 28px;
+    left: -50px;
+    transform: translateY(-50%);
+    right: 0;
+    top: 50%;
+    z-index: -1;
+    font-weight: 600;
+
+    @include responsive(s) {
+        max-width: 378px;
+        padding-right: 32px;
+    }
+
+    @include responsive(xs) {
+        display: none;
+    }
+
+
+  
+    
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0%;
+        width: 75%;
+        height: 100%;
+        backdrop-filter: blur(6px);
+        transform: skewX(-7deg);
+        -webkit-transition: .4s ease;
+        transition: .4s ease;
+    
+        z-index: -1;
+        background:transparent;
+        border: 1px solid rgba(9, 46, 199, 0.5);
+
+        border-radius: 3px;
+       
+    }
+}

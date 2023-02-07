@@ -1,0 +1,56 @@
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    list-style: none;
+    text-decoration: none;
+}
+
+@import 'sass/colors';
+@import 'sass/customcursor';
+@import 'sass/layout';
+@import 'sass/spacing';
+@import 'sass/typography';
+
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    width: 100%;
+    background-color: $black-normal;
+    overflow: hidden;
+
+    @include responsive(s) {
+        overflow-y: visible;
+    }
+
+}
+
+.border {
+    border: 1px solid red;
+}
+
+.border-radius {
+    border-radius: 4px;
+}
+
+.hidden {
+    overflow: hidden;
+}
+
+.relative {
+    position: relative;
+}
+
+
+
+@import 'sass/menu';
+@import 'sass/icons';
+@import 'sass/buttons';
+@import 'sass/animations';
